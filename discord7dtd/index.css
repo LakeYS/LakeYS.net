@@ -106,11 +106,18 @@ h2 {
   max-height: 96px;
 }
 
+
 .navImg:hover {
   filter: opacity(75%);
-
 }
 
+.profileImg {
+  filter: grayscale(100%) brightness(2000%);
+}
+
+.profileImg:hover {
+  filter: opacity(75%) grayscale(100%) brightness(2000%)
+}
 .navHeader {
   font-family: 'Oxygen', sans-serif;
   font-size: 32px;
