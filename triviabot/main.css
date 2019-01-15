@@ -164,11 +164,11 @@ h3 {
   margin-top: 0;
 }
 
-#img {
+.mainImg {
   align-self: center;
   max-width: 18%;
-  min-width: 100px;
   min-height: 100px;
+  min-width: 100px;
 
   animation: imgintro 1s;
 }
@@ -249,7 +249,7 @@ em {
 footer {
   font-size: 10pt;
   text-align: center;
-  margin-top: 24px;
+  margin-top: 14px;
   margin-bottom: 8px;
 }
 
@@ -283,6 +283,15 @@ footer {
   .bodyDoubleColumns {
     flex-direction: column;
   }
+}
+
+.profileImg {
+  height: 32px;
+  padding-top: 8px;
+}
+
+.profileImg:hover {
+  filter: opacity(60%);
 }
 
 @keyframes imgintro {
