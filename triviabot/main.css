@@ -253,6 +253,13 @@ footer {
   margin-bottom: 8px;
 }
 
+.block {
+  background-color: #40404030;
+  border-radius: 10px;
+  padding: 16px;
+  padding-left: 28px;
+}
+
 @media only screen and (max-width: 650px) {
   #blockHeader {
     font-size: 12px;
