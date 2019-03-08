@@ -61,6 +61,7 @@
           <a class="tocsub" href="#useConfigA">3.1.1: Game Configuration</a><br>
           <a class="tocsub" href="#useConfigB">3.1.2: Global Configuration</a><br>
           <a class="tocsub" href="#useConfigC">3.1.3: Maintenance Configuration</a><br>
+          <a class="tocsub" href="#commandConfig">3.1.4: Changing Configuration Using Commands</a><br>
           <a href="#customQuestions">4. Setting Up Custom Questions</a><br>
           <a href="#linuxService">5. Setting Up TriviaBot as a Service on Linux</a>
 
@@ -132,16 +133,20 @@
           <h3 id="useConfigA">Game Configuration</h2>
           <ul>
             <li><b>disable-admin-commands</b> - Disables all commands that are only usable by administrators. (for example, the "trivia stop" command)</li>
-            <li><b>use-reactions</b> - Enables reaction mode. In reaction mode, answers are given using reactions rather than typed responses.</li>
+            <li><b>use-reactions</b> - Enables reaction mode. In reaction mode, answers are given using reactions rather than typed responses. NOTE: Reaction mode games can also be started using the 'trivia play advanced' command.</li>
+            <li><b>hangman-mode</b> - Enables hangman mode. In this mode, answers are given by typing them out rather than choosing from a list of choices. NOTE: Hangman games can also be started using the 'trivia play advanced' command.</li>
             <li><b>prefix</b> - The prefix that users must type before each command. For example, changing this to "!" means users will need to type "!help" for the help command.</li>
             <li><b>hide-difficulty</b> - When enabled, games will not show their difficulty color. The embed will be blue instead.</li>
             <li><b>auto-delete-msgs</b> - The bot will automatically delete all of its messages after 15 seconds. The bot does not delete users' messages.</li>
+            <li><b>auto-delete-answers</b> - The bot will automatically delete players' typed answers. Does not apply to reaction mode.</li>
+            <li><b>auto-delete-answers-timer</b> - Approximate time in milliseconds until the bot deletes answers when auto-delete-answers is enabled. 0 being as quickly as possible. Accuracy may vary by network.</li>
             <li><b>round-length</b> - How long each round lasts in milliseconds.</li>
             <li><b>round-timeout</b> - The amount of time between rounds in milliseconds.</li>
             <li><b>round-end-warnings-disabled</b> - Disables the "game will end if nobody participates" warnings.</li>
             <li><b>rounds-end-after</b> - How many inactive rounds (where no answers are given) are allowed before a game automatically ends.</li>
             <li><b>disable-score-display</b> - Prevents the bot from displaying users' scores. Games will still be scored internally.</li>
             <li><b>score-value</b> - How many points are awarded for each question, based on difficulty.</li>
+            <li><b>score-multiplier-max</b> - Allows for setting a bonus multiplier for questions. Bonuses are given based on how many other players get the question incorrect. Default is 1, which has no effect. Recommended value is 2 for balance.</li>
             <li><b>command-whitelist</b> - A whitelist of users that can use commands.
               <br>Example: <em>["Lake#4898", "LakeTest#9924", "Cake#7123"]</em></li>
           </ul>
@@ -157,6 +162,8 @@
             <li><b>database-merge</b> - For use with file-based custom trivia databases. Allows the use of custom trivia questions along with OpenTDB questions. See <a href=#customQuestions>Setting Up Custom Questions</a> for more info.</li>
             <li><b>database-cache-size</b> - How many questions the bot will cache on startup. Max: 50</li>
             <li><b>stat-file</b> - Which file to store statistics in.</li>
+            <li><b>embed-color</b> - The default color that the bot's embeds will use.</li>
+            <li><b>channel-whitelist</b> - If any channels are specified, the bot will only work in those channels. Can specify either a channel name or an ID. Example: <em>"channel-whitelist": [ "trivia-dev", "trivia-dev2", "261705677943209984" ]</em></li>
           </ul>
 
           <h3 id="useConfigC">Maintenance Configuration</h2>
@@ -166,6 +173,14 @@
             <li><b>fallback-silent</b> - Disables the message ID display while in fallback mode.</li>
             <li><b>fallback-exceptions</b> - Channels where the bot will still send messages while in fallback mode.</li>
           </ul>
+
+          <h3 id="commandConfig">Changing Configuration Using Commands</h3>
+          <p>Setting the <b>config-commands-enabled</b> option to true enables the admin "trivia config" and "trivia reset" admin commands.</p>
+          <p><em>trivia config &lt;option&gt; &lt;value&gt; &lt;channel (optional)&gt;</em></p>
+          <p>The "trivia config" command can be used to change values in config. Values can be surrounded with quotes when necessary, for example to reset the prefix to "trivia " (<em>trivia config prefix "trivia "</em>). Options can be removed by typing "trivia config null".</p>
+          <p>Beware that this will change line spacing of the config file; it is recommended that you create a backup.</p>
+          <p>The "trivia reset" command restarts the bot to apply config changes. All options currently require a restart before they take effect.</p>
+          <p>Specifying a channel will cause the config to only take effect in that channel. Channel-based options are stored in Options/{channelid}_config.json in the bot's folder.</p>
 
           <h1 id="customQuestions">Setting Up Custom Questions</h1>
           One of the perks of self-hosting TriviaBot is that you can add your own questions! Here's how:
