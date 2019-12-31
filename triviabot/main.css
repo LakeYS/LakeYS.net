@@ -290,6 +290,10 @@ footer {
   .bodyDoubleColumns {
     flex-direction: column;
   }
+
+  #imgContainer {
+    margin-top: 100px; /* TODO */
+  }
 }
 
 .profileImg {
