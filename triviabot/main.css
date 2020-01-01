@@ -68,7 +68,7 @@ body {
 
 #blockHeaderLogo {
   font-family: 'Varela Round', sans-serif;
-  font-size: 30px;
+  font-size: 26px;
   text-decoration: none;
 
   display: inline-flex;
@@ -112,26 +112,53 @@ body {
 
   align-items: center;
   justify-content: center;
+
+  font-size: 14px;
   text-decoration: none;
 
-  max-width: 175px;
-  padding-left: 16px;
-  padding-right: 16px;
+  max-width: 165px;
+  padding-left: 14px;
+  padding-right: 14px;
   height: 64px;
   margin-top: -8px;
 
   box-sizing: content-box;
 }
 
+
 .blockHeaderOption:hover {
   background-color: #3383D1;
+}
+
+.blockHeaderPartner {
+  flex-direction: column;
+  align-items: baseline;
+
+  font-size: 12px;
+
+  background-color: #4B92D7;
+}
+
+.blockHeaderPartner:hover {
+  background-color: #4B92D7;
+}
+
+.partnerBtn {
+  font-size: 14px;
+  text-decoration: none;
+
+}
+
+.partnerImg {
+  max-width: 22px;
+    vertical-align: middle;
 }
 
 #inviteButton {
   display: inline-flex;
   margin-left: auto;
   margin-right: 12px;
-  background-color: #3383D1;
+  background-color: #4B92D7;
   width: 75px;
 }
 
@@ -260,7 +287,7 @@ footer {
   padding-left: 28px;
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 1020px) {
   #blockHeader {
     font-size: 12px;
     flex-direction: column;
@@ -291,8 +318,12 @@ footer {
     flex-direction: column;
   }
 
-  #imgContainer {
-    margin-top: 100px; /* TODO */
+  .mainImg {
+    display: none;
+  }
+
+  #blockHeader {
+    margin-bottom: 100px; /* TODO */
   }
 }
 
