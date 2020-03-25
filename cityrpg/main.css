@@ -63,7 +63,7 @@ p {
 }
 
 iframe {
-  height: 82vh;
+  height: 84vh;
   border-radius: 10px;
   width: 100%;
 }
@@ -77,6 +77,10 @@ iframe {
   font-size: 11pt;
   padding-left: 16px;
   padding-right: 16px;
+}
+
+.roadmapHeader {
+  font-size: 30pt;
 }
 
 @media only screen and (max-width: 700px) {
