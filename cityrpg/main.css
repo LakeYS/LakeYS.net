@@ -62,6 +62,23 @@ p {
   text-decoration: none;
 }
 
+iframe {
+  height: 82vh;
+  border-radius: 10px;
+  width: 100%;
+}
+
+#roadmap {
+  max-width: 100%;
+  text-align: center;
+}
+
+.roadmapText {
+  font-size: 11pt;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
 @media only screen and (max-width: 700px) {
   /* Responsive stuffs */
 }
