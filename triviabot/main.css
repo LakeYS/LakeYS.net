@@ -31,7 +31,7 @@ body {
   display: flex;
   flex-direction: column;
 
-  background-color: #287CCE;
+  background-color: rgb(32, 99, 165);
 
   overflow: hidden;
 
@@ -52,7 +52,7 @@ body {
   text-align: left;
 
 
-  background-color: #106DC7;
+  background-color: rgb(13, 87, 159);
   box-shadow: 0 0 4px #202020;
 
   width: 100%;
