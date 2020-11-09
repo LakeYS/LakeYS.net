@@ -293,7 +293,11 @@ footer {
   #blockHeader {
     font-size: 12px;
     flex-direction: column;
-    height: 100px;
+    height: 150px;
+  }
+
+  #blockContent {
+    margin-top: 50px;
   }
 
   .blockHeaderOption {
@@ -305,11 +309,6 @@ footer {
   #blockHeaderLogo {
     margin-left: 24px !important;
     align-self: center;
-  }
-
-  #inviteButton {
-    margin-left: 0;
-    margin-bottom: -20px;
   }
 
   #links {
