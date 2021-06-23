@@ -86,7 +86,8 @@
             <li><a href="http://lakeys.net/triviabot/dl/TriviaBot.zip">Download</a> the TriviaBot program and extract it somewhere on your system.</li>
             <li>Install Node.js LTS from <a href="https://nodejs.org/en/download/">this website</a>.</li>
             <li>Once Node.js is finished installing, run install.bat in the bot's folder. This will automatically install the required modules for the bot.</li>
-            <li>Right click the bot's config.json file and click "Edit".</li>
+            <li>Right click the config.example.json file, click "rename", and rename this file to <em>config.json</em>.</li>
+            <li>Right click your new config.json file and click "Edit", or open the file in your preferred text editor.</li>
             <li>Find "your_token_here" and replace it with the Discord token from earlier.</li>
           </ol>
 
@@ -127,6 +128,7 @@
             <li>Type <em>tar -xzf triviabot.tar.gz</em> to extract the archive. This will create a directory named "TriviaBot". Navigate to the directory with <em>cd TriviaBot</em>.</li>
             <li>Type <em>sudo chmod +x run.sh</em>. This gives you permission to execute run.sh. (If this does not work, try <em>chmod +x run.sh</em>)</li>
             <li>Type <em>npm install</em> to install the required packages for the bot to run.</li>
+            <li>Rename the <em>config.example.json</em> file to <em>config.json</em>.</li>
             <li>Open config.json in a text editor.</li>
             <li>Replace "your_token_here" with the Discord bot token from earlier.</li>
           </ol>
@@ -143,11 +145,14 @@
             <li><b>disable-admin-commands</b> - Disables all commands that are only usable by administrators. (for example, the "trivia stop" command)</li>
             <li><b>use-reactions</b> - Enables reaction mode. In reaction mode, answers are given using reactions rather than typed responses. NOTE: Reaction mode games can also be started using the 'trivia play advanced' command.</li>
             <li><b>hangman-mode</b> - Enables hangman mode. In this mode, answers are given by typing them out rather than choosing from a list of choices. NOTE: Hangman games can also be started using the 'trivia play advanced' command.</li>
+            <li><b>hangman-hints</b> - Enables hints in hangman mode.</li>
             <li><b>prefix</b> - The prefix that users must type before each command. For example, changing this to "!" means users will need to type "!help" for the help command.</li>
             <li><b>hide-difficulty</b> - When enabled, games will not show their difficulty color. The embed will be blue instead.</li>
             <li><b>auto-delete-msgs</b> - The bot will automatically delete all of its messages after 15 seconds. This option will not delete players' answers.</li>
-            <li><b>auto-delete-answers</b> - The bot will automatically delete players' typed answers. Does not apply to reaction mode.</li>
+            <li><b>auto-delete-msgs-timer</b> - Approximate time in milliseconds until the bot deletes its own messages.</li>
+            <li><b>auto-delete-answers</b> - The bot will automatically delete players' typed answers. Does not apply to reaction mode. Beware: Not an effective way to hide answers entirely! Determined cheaters can still snoop the answers before they disappear.</li>
             <li><b>auto-delete-answers-timer</b> - Approximate time in milliseconds until the bot deletes answers when auto-delete-answers is enabled. 0 being as quickly as possible. Accuracy may vary by network.</li>
+            <li><b>reveal-answers</b> - When disabled, the bot will not display the anwer at the end of the round -- only which players answered correctly.</li>
             <li><b>round-length</b> - How long each round lasts in milliseconds. Note that hangman games will add 10 extra seconds to this value.</li>
             <li><b>round-timeout</b> - The amount of time between rounds in milliseconds.</li>
             <li><b>round-end-warnings-disabled</b> - Disables the "game will end if nobody participates" warnings.</li>
@@ -155,7 +160,7 @@
             <li><b>disable-score-display</b> - Prevents the bot from displaying users' scores. Games will still be scored internally.</li>
             <li><b>score-value</b> - How many points are awarded for each question, based on difficulty.</li>
             <li><b>score-multiplier-max</b> - Allows for setting a bonus multiplier for questions. Bonuses are given based on how many other players get the question incorrect. Default is 1, which has no effect. Recommended value is 2 for balance.</li>
-            <li><b>command-whitelist</b> - A whitelist of users that can use commands.
+            <li><b>command-whitelist</b> - A whitelist of users that can use commands. Can be a user tag (i.e. "Lake#4898") or a user ID (i.e. "128263376659939328")
               <br>Example: <em>["Lake#4898", "LakeTest#9924", "Cake#7123"]</em></li>
             <li><b>accept-first-answer-only</b> - When enabled, only the first answer each player enters will be accepted -- answer changes will be ignored.</li>
           </ul>
@@ -196,6 +201,7 @@
           <ol>
             <li>Open your config.json and look for "databaseURL". Replace <em>https://opentdb.com</em> with <em>file://./Questions</em>. You can use a different file path if desired.</li>
             <li>Enter the questions folder. Inside, you'll find a sample database. The sample database shows you how to format your questions and categories.</li>
+            <li>In order to use these files, you will need to rename them to remove <em>.example.</em>. Rename <em>categories.example.yml</em> to <em>categories.yml</em>, <em>questions_0.example.yml</em> to <em>questions_0.yml</em>, etc.</li>
             <li>Open the categories.yml file in a text editor. Here, you can add, delete, and edit categories as needed. When creating a new category, make sure you have a matching file for it, named <em>questions_<b>ID</b>.yml</em>.</li>
             <li>Now edit the question files for your new categories. The included files, named "questions_0.yml", "questions_1.yml", and "questions_2.yml" all contain sample questions.</li>
             <li>Replace the example quetions as needed and, following the same format, add your own.</li>
