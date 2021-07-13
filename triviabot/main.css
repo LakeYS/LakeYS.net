@@ -47,6 +47,14 @@ body {
   min-height: 400px;
 }
 
+.previewImg {
+  float: right;
+  margin-bottom: 12px;
+  margin-left: 16px;
+  box-shadow: 0 0 8px #000000;
+  border-radius: 8px;
+}
+
 #blockHeader {
   display: inline-flex;
   text-align: left;
@@ -234,7 +242,9 @@ a:hover {
   font-family: 'Varela Round', sans-serif;
   font-weight: bold;
   text-shadow: 1px 1px 1px #2F2F2F;
+
   margin: auto;
+  margin-bottom: 0;
   padding-left: 8px;
   padding-right: 8px;
   text-decoration: none;
@@ -294,6 +304,13 @@ footer {
     font-size: 12px;
     flex-direction: column;
     height: 150px;
+  }
+
+  .previewImg {
+    float: none;
+    display: block;
+    margin: auto;
+    justify-content: center;
   }
 
   #blockContent {
