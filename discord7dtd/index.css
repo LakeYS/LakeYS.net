@@ -25,10 +25,15 @@ body {
   box-shadow: 0 0 6px #000000;
 }
 
+.logoText {
+  font-size: 24pt;
+  text-decoration: none;
+  margin-bottom: 6px;
+  margin-top: 6px;
+}
+
 .headerText {
-  padding-top: 16px; /* Workaround for text not centering properly */
-  margin-left: 5%;
-  margin-right: 5%;
+  text-align: center;
 }
 
 #headerBtnContainer {
@@ -39,8 +44,8 @@ body {
 
 .headerButton {
   text-decoration: none;
-  border-bottom: 3px solid rgba(100%, 100%, 100%, 0.75);
   border: 1px solid rgba(100%, 100%, 100%, 0.75);
+  border-bottom: 3px solid rgba(100%, 100%, 100%, 0.5);
   padding: 14px;
   margin-left: 5px;
 }
