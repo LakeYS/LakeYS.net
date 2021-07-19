@@ -343,6 +343,10 @@ footer {
   #blockHeader {
     margin-bottom: 100px; /* TODO */
   }
+
+  #inviteButton {
+    display: none;
+  }
 }
 
 .profileImg {
