@@ -68,8 +68,11 @@
           <a class="tocsub" href="#useConfigB">3.1.2: Global Configuration</a><br>
           <a class="tocsub" href="#useConfigC">3.1.3: Maintenance Configuration</a><br>
           <a class="tocsub" href="#commandConfig">3.1.4: Changing Configuration Using Commands</a><br>
-          <a href="#customQuestions">4. Setting Up Custom Questions</a><br>
-          <a href="#linuxService">5. Setting Up TriviaBot as a Service on Linux</a>
+          <a href="#customQuestions">4. How to Set Up Custom Questions</a><br>
+          <a href="#customQuestionsOptionals">5. Optional Configurations for Custom Questions</h2><br>
+          <a class="tocsub" href="#optionalAnswerExtension">5.1: How to Add Additional Answer Info (Answer Extensions)</a><br>
+          <a class="tocsub" href="#optionalImages">5.2: How to Add Images to Questions and Answers</a><br>
+          <a href="#linuxService">6. How to Set Up TriviaBot as a Service on Linux</a>
 
           <h1 id="windows">How to Install - Windows</h1>
           <h2 id="windowsAcc">Creating the bot account</h2> <!-- These instructions are repeated below -->
@@ -210,7 +213,58 @@
             <li>Now start the bot and test your questions! Typing "trivia help" and "trivia categories" will show you how many questions you have added.</li>
           </ol>
 
-          <h1 id="linuxService">Setting Up TriviaBot as a Service on Linux</h1>
+          <h2 id="customQuestionsOptionals">Optional Configurations for Custom Questions</h2>
+          <h3 id="optionalAnswerExtension">How to Add Additional Answer Info (Answer Extensions)</h3>
+          <p>You can add an additional comment or clarification to your custom questions by adding the <em>answer_extension</em> field to your question. Any text you enter in this field will display with the answer at the end of round.</p>
+          <p>Your answer extensions can include links.</p>
+          <p>Example formatting for answer extensions:</p>
+          <div class="block">
+            # Category 0 - Science
+            ---
+            questions:
+            - question: "Compared to Earth, what is the approximate force of gravity on the moon?"
+            &nbsp;&nbsp;difficulty: "medium"
+            &nbsp;&nbsp;correct_answer: "One sixth"
+            &nbsp;&nbsp;incorrect_answers:
+            &nbsp;&nbsp;- "One half"
+            &nbsp;&nbsp;- "One eighth"
+            &nbsp;&nbsp;- "The same"
+            &nbsp;&nbsp;answer_extension: "The force of gravity on the moon is 1.62 m/s². compared to Earth's 9.807 m/s²."
+            - question: "Buzz Aldrin was the first man to step on the moon."
+            &nbsp;&nbsp;difficulty: "medium"
+            &nbsp;&nbsp;correct_answer: "False"
+            &nbsp;&nbsp;incorrect_answers:
+            &nbsp;&nbsp;- "True"
+            &nbsp;&nbsp;answer_extension: "Neil Armstrong became the first human to step on the moon on July 20, 1969."
+          </div>
+
+          <h3 id="optionalImages">How to Add Images to Questions and Answers</h3>
+          <p>You can specify an image to display on either the question, answer, or both, using the corresponding fields: <em>question_image</em> and <em>answer_image</em></p>
+          <p>Each image must be posted with a link. If an invalid link is specified, your image will not appear.</p>
+          <p>Example formatting for images:</p>
+          <div class="block">
+            # Category 0 - Science
+            ---
+            questions:
+            - question: "Compared to Earth, what is the approximate force of gravity on the moon?"
+            &nbsp;&nbsp;difficulty: "medium"
+            &nbsp;&nbsp;correct_answer: "One sixth"
+            &nbsp;&nbsp;incorrect_answers:
+            &nbsp;&nbsp;- "One half"
+            &nbsp;&nbsp;- "One eighth"
+            &nbsp;&nbsp;- "The same"
+            &nbsp;&nbsp;question_image: "https://lakeys.net/triviabot/sample_images/moon.jpg"
+            &nbsp;&nbsp;answer_image: "https://lakeys.net/triviabot/sample_images/aldrin-descending-lm.jpg"
+            - question: "Buzz Aldrin was the first man to step on the moon."
+            &nbsp;&nbsp;difficulty: "medium"
+            &nbsp;&nbsp;correct_answer: "False"
+            &nbsp;&nbsp;incorrect_answers:
+            &nbsp;&nbsp;- "True"
+            &nbsp;&nbsp;question_image: "https://lakeys.net/triviabot/sample_images/buzz-aldrin-and-the-us-flag-on-the-moon.jpg"
+            &nbsp;&nbsp;answer_image: "https://lakeys.net/triviabot/sample_images/armstrong-on-moon.jpg"
+          </div>
+
+          <h1 id="linuxService">How to Set Up TriviaBot as a Service on Linux</h1>
           <p>Once you have the bot set up on linux, you may find it more convenient to run the bot as a service.</p>
           <p>Before starting, make sure the bot is not already running.</p>
           <ol>
@@ -218,17 +272,17 @@
             <li>Fill it with the following text, and replace the items in {brackets} with the relevant information below:
               <div class="block">
                 [Service]
-                <br>ExecStart=/usr/bin/npm start
-                <br>WorkingDirectory=<i>{File Path}</i>
-                <br>Restart=always
-                <br>StandardOutput=syslog
-                <br>StandardError=syslog
-                <br>SyslogIdentifier=triviabot
-                <br>User=<i>{Username}</i>
-                <br>
-                <br>[Install]
-                <br>WantedBy=multi-user.target
-                <br>
+                ExecStart=/usr/bin/npm start
+                WorkingDirectory=<i>{File Path}</i>
+                Restart=always
+                StandardOutput=syslog
+                StandardError=syslog
+                SyslogIdentifier=triviabot
+                User=<i>{Username}</i>
+                
+                [Install]
+                WantedBy=multi-user.target
+                
               </div>
               <br>
               <ul>
