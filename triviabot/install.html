@@ -41,7 +41,7 @@
       </h1>
 
       <div id="blockContent">
-          <p>TriviaBot is open-source and can be downloaded for free. This guide shows you how to install TriviaBot on a Windows, Linux, or Android system. <b>Note that installing TriviaBot using this method is completely optional for most cases. For general use, you can simply <a href="http://lakeys.net/triviabot/invite">invite TriviaBot to your server</a> directly.</b></p>
+          <p>TriviaBot is open-source and can be downloaded for free. This guide shows you how to install TriviaBot on a Windows or Linux system. <b>Note that installing TriviaBot using this method is completely optional for most cases. For general use, you can simply <a href="http://lakeys.net/triviabot/invite">invite TriviaBot to your server</a> directly.</b></p>
           <p>If you enjoy using TriviaBot as a free and open source application, please consider <a href="https://www.patreon.com/LakeYS">supporting it on patreon.</a></p>
 
           <p><a class="github-button" href="https://github.com/LakeYS/Discord-Trivia-Bot" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star LakeYS/Discord-Trivia-Bot on GitHub">Star</a></p>
@@ -57,8 +57,7 @@
           <a class="tocsub" href="#windowsSetup">1.2: Setting up the bot</a><br>
           <a class="tocsub" href="#windowsRun">1.3: Run the bot!</a><br>
           <a href="#linux">2. How to Install - Linux<br>
-          <a class="tocsub" href="#linuxAndroid">2.0.1: Android Devices</a><br>
-          <a class="tocsub" href="#linuxPi">2.0.2: Raspberry Pi/Raspbian OS</a><br>
+          <a class="tocsub" href="#linuxPi">2.0.1: Raspberry Pi/Raspbian OS</a><br>
           <a class="tocsub" href="#linuxAcc">2.1: Creating the bot account</a><br>
           <a class="tocsub" href="#linuxSetup">2.2: Setting up the bot</a><br>
           <a class="tocsub" href="#linuxRun">2.3: Run the bot!</a><br>
@@ -106,11 +105,6 @@
           <p><em>C:\Users\[YOURNAME]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup</em></p>
 
           <h1 id="linux">How to Install - Linux</h1>
-          <h2 id="linuxAndroid">Android Devices</h2>
-          <p>The bot can be installed on Android devices using the <a href="https://play.google.com/store/apps/details?id=com.termux&hl=en">Termux</a> app. No rooting is required! Once installed, enter <em>apt update</em> and <em>apt install nodejs curl</em>. Then, proceed with the installation as a Linux system. You may need access to a desktop computer in order to create the bot account.</p>
-
-          <p>Beware that support for Android is <b>experimental</b> and may be unstable. For a text editor, Termux has generally VI pre-installed. A guide on how to use it can be found <a href=http://www.atmos.albany.edu/daes/atmclasses/atm350/vi_cheat_sheet.pdf target="_none">here</a>.</p>
-
           <h2 id="linuxPi">Raspberry Pi/Raspbian OS</h2>
           <p>TriviaBot can be run from a Raspberry Pi device by installing Node.js.</p>
           <p>First, follow the <a href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions" target="_none">Node.js install instructions found here</a> under "Debian and Ubuntu based Linux distributions". Once this is done, you can proceed with the instructions below. You may need access to a desktop computer in order to create the bot account.</p>
@@ -128,7 +122,7 @@
           <h2 id="linuxSetup">Setting up the bot</h2>
           <ol>
             <li>Open a terminal on your system.</li>
-            <li><b>(Skip this step if installing to an Android or Raspberry Pi device.)</b> Install the current version of Node.js and NPM (16.6 is required at minimum). Install build tools if instructed. <a href="https://nodejs.org/en/download/package-manager/">How to install via package manager</a>.</li>
+            <li><b>(Skip this step if installing to a Raspberry Pi device.)</b> Install the current version of Node.js and NPM (16.6 is required at minimum). Install build tools if instructed. <a href="https://nodejs.org/en/download/package-manager/">How to install via package manager</a>.</li>
             <li>Type <em>curl -L http://lakeys.net/triviabot/dl/triviabot.tar.gz > triviabot.tar.gz</em> to download the bot's files to an archive named <em>triviabot.tar.gz</em>.</li>
             <li>Type <em>tar -xzf triviabot.tar.gz</em> to extract the archive. This will create a directory named "TriviaBot". Navigate to the directory with <em>cd TriviaBot</em>.</li>
             <li>Type <em>sudo chmod +x run.sh</em>. This gives you permission to execute run.sh. (If this does not work, try <em>chmod +x run.sh</em>)</li>
