@@ -274,6 +274,13 @@ a:hover {
   max-width: 100%;
 }
 
+#imgInfo {
+  float: right;
+  width: auto;
+  max-width: 256px;
+  margin: 8px;
+}
+
 .tocsub {
   padding-left: 0.6em;
 }
