@@ -1,0 +1,12 @@
+{
+	"current_version": "2.0.0-pre.0",
+	"update_message": null,
+	"update_link": "https://example.com",
+	"changelog_raw_link": "https://example.com",
+	"update_info_link": "https://github.com/LakeYS/Discord-Trivia-Bot/releases",
+	"update_summary": "TriviaBot 2.0 is a code revamp for TriviaBot.",
+	"update_is_critical": false,
+	"revision_date": "2021-11-03T17:33:33.431Z",
+	"download_link": "https://example.com",
+	"download_sha256": "100680ad546ce6a577f42f52df33b4cfdca756859e664b8d7de329b150d09ce9"
+}
