@@ -75,10 +75,16 @@
           <a href="#linuxService">5. How to Set Up TriviaBot as a Service on Linux</a>
 
           <h1 id="windows">How to Install - Windows</h1>
+          <img src="./install/ss_devpanel.png" id="imgInfo">
           <h2 id="windowsAcc">Creating the bot account</h2> <!-- These instructions are repeated below -->
           <ol>
-            <li>Log in to the <a href="https://discord.com/developers/applications" target="_none">Discord Developer Portal</a> and click "New application". Name the bot anything you like and click Create. Copy or write down the application ID as you will need it for later.</li>
-            <li>On the left hand side, click "Bot". Now click the "Add Bot" button to create your bot. Here you can set an avatar for your bot if desired.</li>
+            <li>Log in to the <a href="https://discord.com/developers/applications" target="_none">Discord Developer Portal</a> and click "New application". Name the bot anything you like and click Create. Copy or write down the application ID as you will need it for later.
+              
+            </li>
+            <li>On the left hand side, click "Bot". Now click the "Add Bot" button to create your bot. Here you can set an avatar for your bot if desired.
+              
+              
+            </li>
             <li>Under "Token" click the link that says "click to reveal". This is the password for your bot's account. You'll need this and the Client ID number later. Copy them both somewhere safe or keep the tab open.</li>
             <li>Paste the URL listed below into your browser and replace "CLIENT_ID" with your application ID number from earlier. Hit enter and select the desired Discord server. Once this is done, the bot will show up in your server!</li>
           </ol>
@@ -156,9 +162,10 @@
             <li><b>round-timeout</b> - The amount of time between rounds in milliseconds.</li>
             <li><b>round-end-warnings-disabled</b> - Disables the "game will end if nobody participates" warnings.</li>
             <li><b>rounds-end-after</b> - How many inactive rounds (where no answers are given) are allowed before a game automatically ends.</li>
-            <li><b>disable-score-display</b> - Prevents the bot from displaying users' scores. Games will still be scored internally.</li>
+            <li><b>disable-score-display-midround</b> - Prevents the bot from displaying users' scores between rounds.</li>
+            <li><b>disable-score-display-final</b> - Prevents the bot from displaying users' scores at the end of a game.</li>
             <li><b>score-value</b> - How many points are awarded for each question, based on difficulty.</li>
-            <li><b>score-multiplier-max</b> - Allows for setting a bonus multiplier for questions. Bonuses are given based on how many other players get the question incorrect. Default is 1, which has no effect. Recommended value is 2 for balance.</li>
+            <li><b>unique-multiplier-max</b> - Allows for setting a bonus multiplier for questions. Bonuses are given based on how many other players get the question incorrect. Default is 0, which has no effect. Recommended value is 2 for balance.</li>
             <li><b>command-whitelist</b> - A whitelist of users that can use commands. Can be a user tag (i.e. "Lake#4898") or a user ID (i.e. "128263376659939328")
               <br>Example: <em>["Lake#4898", "LakeTest#9924", "Cake#7123"]</em></li>
             <li><b>use-fixed-rounds</b> - When enabled, games will run for a set number of rounds.</li>
@@ -308,6 +315,7 @@
     <footer>Site by Lake Y (<a href=http://lakeys.net target=_none>LakeYS.net</a>). For business inquiries: <a href=mailto:contact@lakeys.net>contact@lakeys.net</a>.
       <br>Special thanks to this month's sponsor: Gamer0364
       <br><a href="https://github.com/LakeYS" target=_none><img class="profileImg" src="../pf_git.png"></a>
+      <br><a href="./tos">Terms of Service</a> | <a href="./privacy">Privacy Policy</a>
     </footer>
   </body>
 </html>
