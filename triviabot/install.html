@@ -72,7 +72,10 @@
           <a href="#customQuestionsOptionals">4.2. Optional Configurations for Custom Questions</h2><br>
           <a class="tocsub" href="#optionalAnswerExtension">4.2.1: How to Add Additional Answer Info (Answer Extensions)</a><br>
           <a class="tocsub" href="#optionalImages">4.2.2: How to Add Images to Questions and Answers</a><br>
-          <a href="#linuxService">5. How to Set Up TriviaBot as a Service on Linux</a>
+          <a href="#linuxService">5. How to Set Up TriviaBot as a Service on Linux</a><br>
+          <a href="#commonErrors">6. Common Console Messages</a><br>
+          <a class="tocsub" href="#commonErrors-userRanSlash">6.1: "Got slash command attempt while commands are disabled."</a>
+
 
           <h1 id="windows">How to Install - Windows</h1>
           <img src="./install/ss_devpanel.png" id="imgInfo">
@@ -307,6 +310,12 @@
             <li>Wait a few seconds, then type <em>systemctl status triviabot</em> to see if the bot started successfully. If an error displays, double-check to make sure that both the bot and the triviabot.service file are configured correctly. Be sure to type <em>systemctl daemon-reload</em> after making any corrections to triviabot.service.</li>
           </ol>
           <p>You can now use the following commands to manage the bot: <em>sytstemctl stop triviabot</em>, <em>sytstemctl start triviabot</em>, <em>sytstemctl restart triviabot</em>, and <em>sytstemctl status triviabot</em>. Use sudo with these commands to avoid re-entering the password each time.</p>
+
+          <h1 id="commonErrors">Common Console Messages</h1>
+          <h2 id="commonErrors-userRanSlash">"Got slash command attempt while commands are disabled."</h2>
+          <p>If slash commands were recently disabled, the commands may still be registered. Try typing <em>clearcommands</em> and <em>clearglobalcommands</em> in the console to fix this.</p>
+          <p>Commands may not disappear right away when cleared depending on how long it takes Discord to process them.</p>
+          <p>When this happens, the command will not run and the user will receive the following message: "This bot is using text commands instead of slash commands. Try <em>trivia help</em>, etc. instead."</p>
           <br>
         </div>
       </div>
