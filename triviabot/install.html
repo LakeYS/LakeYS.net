@@ -47,20 +47,20 @@
           <a class="tocsub" href="#windowsAcc">1.1: Creating the bot account</a><br>
           <a class="tocsub" href="#windowsSetup">1.2: Setting up the bot</a><br>
           <a class="tocsub" href="#windowsRun">1.3: Run the bot!</a><br>
-          <a href="#linux">2. How to Install - Linux<br>
-          <a class="tocsub" href="#linuxPi">2.0.1: Raspberry Pi/Raspbian OS</a><br>
+          <a href="#linux">2. How to Install - Linux<br></a>
+          <a class="tocsub" href="#linuxPi">2.0.1: Raspberry Pi</a><br>
           <a class="tocsub" href="#linuxAcc">2.1: Creating the bot account</a><br>
           <a class="tocsub" href="#linuxSetup">2.2: Setting up the bot</a><br>
           <a class="tocsub" href="#linuxRun">2.3: Run the bot!</a><br>
-          <a href="#use">3. Usage Instructions<br>
+          <a href="#use">3. Usage Instructions<br></a>
           <a class="tocsub" href="#useConfig">3.1: Configuration</a><br>
           <a class="tocsub" href="#useConfigA">3.1.1: Game Configuration</a><br>
           <a class="tocsub" href="#useConfigB">3.1.2: Global Configuration</a><br>
           <a class="tocsub" href="#useConfigC">3.1.3: Maintenance Configuration</a><br>
           <a class="tocsub" href="#commandConfig">3.1.4: Changing Configuration Using Commands</a><br>
           <a href="#customQuestions">4. How to Set Up Custom Questions</a><br>
-          <a href="#customQuestionsLimits">4.1. Custom Question Limitations</h2><br>
-          <a href="#customQuestionsOptionals">4.2. Optional Configurations for Custom Questions</h2><br>
+          <a href="#customQuestionsLimits">4.1. Custom Question Limitations</h2><br></a>
+          <a href="#customQuestionsOptionals">4.2. Optional Configurations for Custom Questions</h2><br></a>
           <a class="tocsub" href="#optionalAnswerExtension">4.2.1: How to Add Additional Answer Info (Answer Extensions)</a><br>
           <a class="tocsub" href="#optionalImages">4.2.2: How to Add Images to Questions and Answers</a><br>
           <a href="#linuxService">5. How to Set Up TriviaBot as a Service on Linux</a><br>
@@ -75,10 +75,8 @@
             <li>Log in to the <a href="https://discord.com/developers/applications" target="_none">Discord Developer Portal</a> and click "New application". Name the bot anything you like and click Create. Copy or write down the application ID as you will need it for later.
               
             </li>
-            <li>On the left hand side, click "Bot". Now click the "Add Bot" button to create your bot. Here you can set an avatar for your bot if desired.
-              
-              
-            </li>
+            <li>Under the "Token" header, click the Reset Token button and accept the prompt. This will reveal your token, also known as the password for your bot's account. You'll need this and the Client ID number later.</li>
+            <li>Copy the token and client ID somewhere safe or keep the tab open. If you close the tab and/or lose the token, you will need to redo the previous step.</li>
             <li>Under "Token" click the link that says "click to reveal". This is the password for your bot's account. You'll need this and the Client ID number later. Copy them both somewhere safe or keep the tab open.</li>
             <li>Paste the URL listed below into your browser and replace "CLIENT_ID" with your application ID number from earlier. Hit enter and select the desired Discord server. Once this is done, the bot will show up in your server!</li>
           </ol>
@@ -87,7 +85,7 @@
           <h2 id="windowsSetup">Setting up the bot</h2>
           <ol>
             <li><a href="http://lakeys.net/triviabot/dl/TriviaBot.zip">Download</a> the TriviaBot program and extract it somewhere on your system.</li>
-            <li>Install Node.js (<b>Current</b>, not LTS) from <a href="https://nodejs.org/en/download/current/">this website</a>.</li>
+            <li>Install Node.js using <a href="https://nodejs.org/en/download/">this website</a>.</li>
             <li>Once Node.js is finished installing, run install.bat in the bot's folder. This will automatically install the required modules for the bot.</li>
             <li>Right click the config.example.json file, click "rename", and rename this file to <em>config.json</em>.</li>
             <li>Right click your new config.json file and click "Edit", or open the file in your preferred text editor.</li>
@@ -112,8 +110,9 @@
           <h2 id="linuxAcc">Creating the bot account</h2>  <!-- These instructions are repeated above -->
           <ol>
             <li>Log in to the <a href="https://discord.com/developers/applications" target="_none">Discord Developer Portal</a> and click "New application". Name the bot anything you like and click Create. Copy or write down the application ID as you will need it for later.</li>
-            <li>On the left hand side, click "Bot". Now click the "Add Bot" button to create your bot. Here you can set an avatar for your bot if desired.</li>
-            <li>Under "Token" click the link that says "click to reveal". This is the password for your bot's account. You'll need this and the Client ID number later. Copy them both somewhere safe or keep the tab open.</li>
+            <li>On the left hand side, click "Bot". Here you can set an avatar for your bot if desired.</li>
+            <li>Under the "Token" header, click the Reset Token button and accept the prompt. This will reveal your token, also known as the password for your bot's account. You'll need this and the Client ID number later.</li>
+            <li>Copy the token and client ID somewhere safe or keep the tab open. If you close the tab and/or lose the token, you will need to redo the previous step.</li>
             <li>Paste the URL listed below into your browser and replace "CLIENT_ID" with your application ID number from earlier. Hit enter and select the desired Discord server. Once this is done, the bot will show up in your server!</li>
           </ol>
           <em>https://discord.com/oauth2/authorize?client_id=CLIENT_ID&scope=bot%20applications.commands</em>
@@ -122,7 +121,7 @@
           <h2 id="linuxSetup">Setting up the bot</h2>
           <ol>
             <li>Open a terminal on your system.</li>
-            <li><b>(Skip this step if installing to a Raspberry Pi device.)</b> Install the current version of Node.js and NPM (16.6 is required at minimum). Install build tools if instructed. <a href="https://nodejs.org/en/download/package-manager/">How to install via package manager</a>.</li>
+            <li><b>(Skip this step if installing to a Raspberry Pi device.)</b> Install the current version of Node.js and NPM (v22 is required at minimum). Install build tools if instructed. <a href="https://nodejs.org/en/download">Download Node.js</a>.</li>
             <li>Type <em>curl -L http://lakeys.net/triviabot/dl/triviabot.tar.gz > triviabot.tar.gz</em> to download the bot's files to an archive named <em>triviabot.tar.gz</em>.</li>
             <li>Type <em>tar -xzf triviabot.tar.gz</em> to extract the archive. This will create a directory named "TriviaBot". Navigate to the directory with <em>cd TriviaBot</em>.</li>
             <li>Type <em>sudo chmod +x run.sh</em>. This gives you permission to execute run.sh. (If this does not work, try <em>chmod +x run.sh</em>)</li>
@@ -139,7 +138,7 @@
           <h1 id="use">Usage Instructions</h1>
           <h2 id="useConfig">Configuration</h2>
           <p>The bot can be configured by editing config.json. See below for documentation on the config options.</p>
-          <h3 id="useConfigA">Game Configuration</h2>
+          <h3 id="useConfigA">Game Configuration</h3>
           <ul>
             <li><b>disable-admin-commands</b> - Disables all commands that are only usable by administrators. (for example, the "trivia stop" command)</li>
             <li><b>use-reactions</b> - Enables reaction mode. In reaction mode, answers are given using reactions rather than typed responses. NOTE: Reaction mode games can also be started using the 'trivia play advanced' command.</li>
@@ -159,7 +158,7 @@
             <li><b>disable-score-display-midround</b> - Prevents the bot from displaying users' scores between rounds.</li>
             <li><b>disable-score-display-final</b> - Prevents the bot from displaying users' scores at the end of a game.</li>
             <li><b>score-value</b> - How many points are awarded for each question, based on difficulty.</li>
-            <li><b>unique-multiplier-max</b> - Allows for setting a bonus multiplier for questions. Bonuses are given based on how many other players get the question incorrect. Default is 0, which has no effect. Recommended value is 2 for balance.</li>
+            <li><b>score-multiplier-max</b> - Allows for setting a bonus multiplier for questions. Bonuses are given based on how many other players get the question incorrect. Default is 0, which has no effect. Recommended value is 2 for balance.</li>
             <li><b>command-whitelist</b> - A whitelist of users that can use commands. Can be a user tag (i.e. "Lake#4898") or a user ID (i.e. "128263376659939328")
               <br>Example: <em>["Lake#4898", "LakeTest#9924", "Cake#7123"]</em></li>
             <li><b>use-fixed-rounds</b> - When enabled, games will run for a set number of rounds.</li>
@@ -167,7 +166,7 @@
             <li><b>accept-first-answer-only</b> - When enabled, only the first answer each player enters will be accepted -- answer changes will be ignored.</li>
           </ul>
 
-          <h3 id="useConfigB">Global Configuration</h2>
+          <h3 id="useConfigB">Global Configuration</h3>
           <ul>
             <li><b>allow-eval</b> - When enabled, the console will accept commands and JavaScript code. This is disabled by default due to known issues with the bot starting up.</li>
             <li><b>debug-mode</b> - Debug mode for testing purposes. When enabled, the correct answer to each question will be marked.</li>
@@ -183,7 +182,7 @@
             <li><b>channel-whitelist</b> - If any channels are specified, the bot will only work in those channels. Can specify either a channel name or an ID. Example: <em>"channel-whitelist": [ "trivia-dev", "trivia-dev2", "261705677943209984" ]</em></li>
           </ul>
 
-          <h3 id="useConfigC">Maintenance Configuration</h2>
+          <h3 id="useConfigC">Maintenance Configuration</h3>
           A lot of the options in this section are deprecated and/or unused. Here are the ones that are still in use:
           <ul>
             <li><b>fallback-mode</b> - When enabled, the bot will start in "fallback mode". The bot will not send any messages in fallback mode. Message IDs are displayed in the console.</li>
