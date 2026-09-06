@@ -140,54 +140,54 @@
           <p>The bot can be configured by editing config.json. See below for documentation on the config options.</p>
           <h3 id="useConfigA">Game Configuration</h3>
           <ul>
-            <li><b>disable-admin-commands</b> - Disables all commands that are only usable by administrators. (for example, the "trivia stop" command)</li>
-            <li><b>use-reactions</b> - Enables reaction mode. In reaction mode, answers are given using reactions rather than typed responses. NOTE: Reaction mode games can also be started using the 'trivia play advanced' command.</li>
-            <li><b>hangman-mode</b> - Enables hangman mode. In this mode, answers are given by typing them out rather than choosing from a list of choices. NOTE: Hangman games can also be started using the 'trivia play advanced' command.</li>
-            <li><b>hangman-hints</b> - Enables hints in hangman mode.</li>
-            <li><b>prefix</b> - The prefix that users must type before each command. For example, changing this to "!" means users will need to type "!help" for the help command.</li>
-            <li><b>hide-difficulty</b> - When enabled, games will not show their difficulty color. The embed will be blue instead.</li>
-            <li><b>auto-delete-msgs</b> - The bot will automatically delete all of its messages after a configured amount of time. This option will not delete players' answers. This is set to 15 seconds by default--the same length as a round, so that messages are deleted when their respective rounds end.</li>
-            <li><b>auto-delete-msgs-timer</b> - Approximate time in milliseconds until the bot deletes its own messages.</li>
-            <li><b>auto-delete-answers</b> - The bot will automatically delete players' typed answers. Does not apply to reaction mode. Beware: Not an effective way to hide answers entirely! Determined cheaters can still snoop the answers before they disappear.</li>
+            <li><b>accept-first-answer-only</b> - When enabled, only the first answer each player enters will be accepted -- answer changes will be ignored.</li>
             <li><b>auto-delete-answers-timer</b> - Approximate time in milliseconds until the bot deletes answers when auto-delete-answers is enabled. 0 being as quickly as possible. Accuracy may vary by network.</li>
-            <li><b>reveal-answers</b> - When disabled, the bot will not display the anwer at the end of the round -- only which players answered correctly.</li>
-            <li><b>round-length</b> - How long each round lasts in milliseconds. Note that hangman games will add 10 extra seconds to this value.</li>
-            <li><b>round-timeout</b> - The amount of time between rounds in milliseconds.</li>
-            <li><b>round-end-warnings-disabled</b> - Disables the "game will end if nobody participates" warnings.</li>
-            <li><b>rounds-end-after</b> - How many inactive rounds (where no answers are given) are allowed before a game automatically ends.</li>
-            <li><b>disable-score-display-midround</b> - Prevents the bot from displaying users' scores between rounds.</li>
-            <li><b>disable-score-display-final</b> - Prevents the bot from displaying users' scores at the end of a game.</li>
-            <li><b>score-value</b> - How many points are awarded for each question, based on difficulty.</li>
-            <li><b>score-multiplier-max</b> - Allows for setting a bonus multiplier for questions. Bonuses are given based on how many other players get the question incorrect. Default is 0, which has no effect. Recommended value is 2 for balance.</li>
+            <li><b>auto-delete-answers</b> - The bot will automatically delete players' typed answers. Does not apply to reaction mode. Beware: Not an effective way to hide answers entirely! Determined cheaters can still snoop the answers before they disappear.</li>
+            <li><b>auto-delete-msgs-timer</b> - Approximate time in milliseconds until the bot deletes its own messages.</li>
+            <li><b>auto-delete-msgs</b> - The bot will automatically delete all of its messages after a configured amount of time. This option will not delete players' answers. This is set to 15 seconds by default--the same length as a round, so that messages are deleted when their respective rounds end.</li>
             <li><b>command-whitelist</b> - A whitelist of users that can use commands. Can be a user tag (i.e. "Lake#4898") or a user ID (i.e. "128263376659939328")
               <br>Example: <em>["Lake#4898", "LakeTest#9924", "Cake#7123"]</em></li>
-            <li><b>use-fixed-rounds</b> - When enabled, games will run for a set number of rounds.</li>
+            <li><b>disable-admin-commands</b> - Disables all commands that are only usable by administrators. (for example, the "trivia stop" command)</li>
+            <li><b>disable-score-display-final</b> - Prevents the bot from displaying users' scores at the end of a game.</li>
+            <li><b>disable-score-display-midround</b> - Prevents the bot from displaying users' scores between rounds.</li>
+            <li><b>hangman-hints</b> - Enables hints in hangman mode.</li>
+            <li><b>hangman-mode</b> - Enables hangman mode. In this mode, answers are given by typing them out rather than choosing from a list of choices. NOTE: Hangman games can also be started using the 'trivia play advanced' command.</li>
+            <li><b>hide-difficulty</b> - When enabled, games will not show their difficulty color. The embed will be blue instead.</li>
+            <li><b>prefix</b> - The prefix that users must type before each command. For example, changing this to "!" means users will need to type "!help" for the help command.</li>
+            <li><b>reveal-answers</b> - When disabled, the bot will not display the anwer at the end of the round -- only which players answered correctly.</li>
+            <li><b>round-end-warnings-disabled</b> - Disables the "game will end if nobody participates" warnings.</li>
+            <li><b>round-length</b> - How long each round lasts in milliseconds. Note that hangman games will add 10 extra seconds to this value.</li>
+            <li><b>round-timeout</b> - The amount of time between rounds in milliseconds.</li>
+            <li><b>rounds-end-after</b> - How many inactive rounds (where no answers are given) are allowed before a game automatically ends.</li>
             <li><b>rounds-fixed-number</b> - How many rounds the bot will run for when <em>use-fixed-rounds</em> is enabled.</li>
-            <li><b>accept-first-answer-only</b> - When enabled, only the first answer each player enters will be accepted -- answer changes will be ignored.</li>
+            <li><b>score-multiplier-max</b> - Allows for setting a bonus multiplier for questions. Bonuses are given based on how many other players get the question incorrect. Default is 0, which has no effect. Recommended value is 2 for balance.</li>
+            <li><b>score-value</b> - How many points are awarded for each question, based on difficulty.</li>
+            <li><b>use-fixed-rounds</b> - When enabled, games will run for a set number of rounds.</li>
+            <li><b>use-reactions</b> - Enables reaction mode. In reaction mode, answers are given using reactions rather than typed responses. NOTE: Reaction mode games can also be started using the 'trivia play advanced' command.</li>
           </ul>
 
           <h3 id="useConfigB">Global Configuration</h3>
           <ul>
-            <li><b>allow-eval</b> - When enabled, the console will accept commands and JavaScript code. This is disabled by default due to known issues with the bot starting up.</li>
-            <li><b>debug-mode</b> - Debug mode for testing purposes. When enabled, the correct answer to each question will be marked.</li>
-            <li><b>shard-count</b> - How many shards will be spawned. This is only necessary if the bot is in over 2,000 guilds. See the <a href="https://discord.com/developers/docs/topics/gateway#sharding" target=_none>Discord sharding documentation</a> for more information.</li>
-            <li><b>disable-version-check</b> - When enabled, the application will not check for new versions on startup. It is strongly recommended that this stays enabled unless there is a severe problem with the version check.</li>
             <li><b>allow-bots</b> - Whether other bots are allowed to provide answers. Please be mindful and avoid spamming the Open Trivia Database with unnecessary requests.</li>
-            <li><b>databaseURL</b> - The database URL you want to use. See <a href=#customQuestions>Setting Up Custom Questions</a> for more info. If using the http or https protocol, the server behind it must be functionally identical to the Open Trivia Database API.</li>
-            <li><b>database-merge</b> - For use with file-based custom trivia databases. Allows the use of custom trivia questions along with OpenTDB questions. See <a href=#customQuestions>Setting Up Custom Questions</a> for more info.</li>
-            <li><b>database-cache-size</b> - How many questions the bot will cache on startup. Max: 50</li>
-            <li><b>database-allow-long-answers</b> - Allows answers to be longer than 80 characters without an error on startup. Due to Discord's limit of 80 characters, buttons may not display correctly if this is enabled.</li>
-            <li><b>stat-file</b> - Which file to store statistics in.</li>
-            <li><b>embed-color</b> - The default color that the bot's embeds will use.</li>
+            <li><b>allow-eval</b> - When enabled, the console will accept commands and JavaScript code. This is disabled by default due to known issues with the bot starting up.</li>
             <li><b>channel-whitelist</b> - If any channels are specified, the bot will only work in those channels. Can specify either a channel name or an ID. Example: <em>"channel-whitelist": [ "trivia-dev", "trivia-dev2", "261705677943209984" ]</em></li>
+            <li><b>database-allow-long-answers</b> - Allows answers to be longer than 80 characters without an error on startup. Due to Discord's limit of 80 characters, buttons may not display correctly if this is enabled.</li>
+            <li><b>database-cache-size</b> - How many questions the bot will cache on startup. Max: 50</li>
+            <li><b>database-merge</b> - For use with file-based custom trivia databases. Allows the use of custom trivia questions along with OpenTDB questions. See <a href=#customQuestions>Setting Up Custom Questions</a> for more info.</li>
+            <li><b>databaseURL</b> - The database URL you want to use. See <a href=#customQuestions>Setting Up Custom Questions</a> for more info. If using the http or https protocol, the server behind it must be functionally identical to the Open Trivia Database API.</li>
+            <li><b>debug-mode</b> - Debug mode for testing purposes. When enabled, the correct answer to each question will be marked.</li>
+            <li><b>disable-version-check</b> - When enabled, the application will not check for new versions on startup. It is strongly recommended that this stays enabled unless there is a severe problem with the version check.</li>
+            <li><b>embed-color</b> - The default color that the bot's embeds will use.</li>
+            <li><b>shard-count</b> - How many shards will be spawned. This is only necessary if the bot is in over 2,000 guilds. See the <a href="https://discord.com/developers/docs/topics/gateway#sharding" target=_none>Discord sharding documentation</a> for more information.</li>
+            <li><b>stat-file</b> - Which file to store statistics in.</li>
           </ul>
 
           <h3 id="useConfigC">Maintenance Configuration</h3>
           A lot of the options in this section are deprecated and/or unused. Here are the ones that are still in use:
           <ul>
+            <li><b>fallback-exceptions</b> - Channels where the bot will still send messages while in fallback mode.</li>
             <li><b>fallback-mode</b> - When enabled, the bot will start in "fallback mode". The bot will not send any messages in fallback mode. Message IDs are displayed in the console.</li>
             <li><b>fallback-silent</b> - Disables the message ID display while in fallback mode.</li>
-            <li><b>fallback-exceptions</b> - Channels where the bot will still send messages while in fallback mode.</li>
           </ul>
 
           <h3 id="commandConfig">Changing Configuration Using Commands</h3>
