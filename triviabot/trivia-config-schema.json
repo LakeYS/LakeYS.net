@@ -138,7 +138,7 @@
     },
     "fallback-exceptions": {
       "description": "Channels where the bot will still send messages while in fallback mode.",
-      "type": "boolean",
+      "type": "array",
       "x-category": "maintenance"
     },
     "fallback-intents": {
@@ -225,11 +225,11 @@
     },
     "score-value": {
       "description": "How many points are awarded for each question, based on difficulty.",
-      "type": "number",
+      "type": "object",
       "x-category": "game"
     },
     "shard-count": {
-      "type": "number",
+      "type": ["number", "string"],
       "x-category": "internal-hidden"
     },
     "stat-file": {
