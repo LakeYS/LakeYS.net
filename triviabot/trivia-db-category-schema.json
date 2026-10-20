@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lakeys.net/triviabot/trivia-db-category-schema.json",
+  "title": "Discord-Trivia-Bot Database Category List Schema",
+  "description": "A set of configuration for Discord-Trivia-Bot.",
+  "type": "object",
+  "properties": {
+    "trivia-categories": {
+      "properties": {
+        "id": {
+          "type": "number"
+        },
+        "name": {
+          "description": "This category's display name.",
+          "type": "string"
+        }
+      }
+    }
+  }
+}
+

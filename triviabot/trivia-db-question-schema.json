@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lakeys.net/triviabot/trivia-db-question-schema.json",
+  "title": "Discord-Trivia-Bot Database Question Schema",
+  "description": "A set of configuration for Discord-Trivia-Bot.",
+  "type": "object",
+  "properties": {
+    "questions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "description": "The question text.",
+            "type": "string"
+          },
+          "difficulty": {
+            "description": "This question's difficulty. Should be \"easy\", \"medium\", or \"hard\".",
+            "type": "string"
+          },
+          "correct_answer": {
+            "description": "Always a string. For true and false questions, the string should be exactly \"True\" or \"False\".",
+            "type": "string"
+          },
+          "incorrect_answers": {
+            "description": "Array of incorrect answers. Should have three items, except for true/false questions.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
