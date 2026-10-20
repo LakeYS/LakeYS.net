@@ -1,0 +1,263 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://lakeys.net/triviabot/trivia-config-schema.json",
+  "title": "Discord-Trivia-Bot Configuration Schema",
+  "description": "A set of configuration for Discord-Trivia-Bot.",
+  "type": "object",
+  "properties": {
+    "accept-first-answer-only": {
+      "description": "When enabled, only the first answer each player enters will be accepted -- answer changes will be ignored.",
+      "type": "boolean",
+      "x-category": "game"
+    },
+    "allow-bots": {
+      "description": "Whether other bots are allowed to provide answers. Please be mindful and avoid spamming the Open Trivia Database with unnecessary requests.",
+      "type": "boolean",
+      "x-category": "global"
+    },
+    "allow-eval-console": {
+      "description": "When enabled, the console will accept commands and JavaScript code. This is disabled by default due to known issues with the bot starting up.",
+      "type": "boolean",
+      "x-category": "global"
+    },
+    "auto-delete-answers": {
+      "description": "The bot will automatically delete players' typed answers. Does not apply to reaction mode. Beware: Not an effective way to hide answers entirely! Determined cheaters can still snoop the answers before they disappear.",
+      "type": "boolean",
+      "x-category": "game"
+    },
+    "auto-delete-answers-timer": {
+      "description": "Approximate time in milliseconds until the bot deletes its own messages.",
+      "type": "number",
+      "x-category": "game"
+    },
+    "auto-delete-msgs": {
+      "description": "The bot will automatically delete all of its messages after a configured amount of time. This option will not delete players' answers. This is set to 15 seconds by default--the same length as a round, so that messages are deleted when their respective rounds end.",
+      "type": "boolean",
+      "x-category": "game"
+    },
+    "auto-delete-msgs-timer": {
+      "description": "Approximate time in milliseconds until the bot deletes its own messages.",
+      "type": "number",
+      "x-category": "game"
+    },
+    "channel-whitelist": {
+      "description": "If any channels are specified, the bot will only work in those channels. Can specify either a channel name or an ID. Example: \"channel-whitelist\": [ \"trivia-dev\", \"trivia-dev2\", \"261705677943209984\" ]",
+      "type": "array",
+      "x-category": "global"
+    },
+    "command-whitelist": {
+      "description": "A whitelist of users that can use commands. Can be a user tag (i.e. \"Lake#4898\") or a user ID (i.e. \"128263376659939328\"); Example: [\"lahkay\", \"LakeTest9924\", \"Cake7123\"] ",
+      "type": "array",
+      "x-category": "game"
+    },
+    "database-allow-long-answers": {
+      "description": "Allows answers to be longer than 80 characters without an error on startup. Due to Discord's limit of 80 characters, buttons may not display correctly if this is enabled.",
+      "type": "boolean",
+      "x-category": "global"
+    },
+    "database-cache-size": {
+      "description": "How many questions the bot will cache on startup. Max: 50",
+      "type": "number",
+      "x-category": "global"
+    },
+    "database-merge": {
+      "description": "For use with file-based custom trivia databases. Allows the use of custom trivia questions along with OpenTDB questions. See also: https://lakeys.net/triviabot/install.html#customQuestions",
+      "type": "boolean",
+      "x-category": "global"
+    },
+    "databaseURL": {
+      "description": "The database URL you want to use. If using the http or https protocol, the server behind it must be functionally identical to the Open Trivia Database API. See also: https://lakeys.net/triviabot/install.html#customQuestions",
+      "type": "string",
+      "x-category": "global"
+    },
+    "debug-database-flush": {
+      "type": "boolean",
+      "x-category": "internal-hidden"
+    },
+    "debug-log": {
+      "description": "",
+      "type": "boolean",
+      "x-category": "internal-hidden"
+    },
+    "debug-mode": {
+      "description": "Debug mode for testing purposes. When enabled, the correct answer to each question will be marked.",
+      "type": "boolean"
+    },
+    "debug-slash-commands-guild": {
+      "x-category": "internal-hidden"
+    },
+    "debug-users": {
+      "x-category": "internal-hidden"
+    },
+    "disable-admin-commands": {
+      "description": "Disables all commands that are only usable by administrators. (for example, the \"/stop\" command)",
+      "type": "boolean",
+      "x-category": "game"
+    },
+    "disable-discord-presence": {
+      "x-category": "internal-hidden"
+    },
+    "disable-score-display": {
+      "deprecated": true,
+      "description": "Prevents the bot from displaying the scores. Deprecated, this is a shim for disable-score-display-final and disable-score-display-midrount.",
+      "type": "boolean",
+      "x-category": "shim-game"
+    },
+    "disable-score-display-final": {
+      "description": "Prevents the bot from displaying users' scores at the end of a game.",
+      "type": "boolean",
+      "x-category": "game"
+    },
+    "disable-score-display-midround": {
+      "description": "Prevents the bot from displaying users' scores between rounds.",
+      "type": "boolean",
+      "x-category": "game"
+    },
+    "disable-version-check": {
+      "description": "When enabled, the application will not check for new versions on startup. It is strongly recommended that this stays enabled unless there is a severe problem with the version check.",
+      "type": "boolean",
+      "x-category": "global"
+    },
+    "display-ascii-logo": {
+      "type": "boolean",
+      "x-category": "internal-hidden"
+    },
+    "display-pregame-rules": {
+      "description": "Show a list of rules before a game starts.",
+      "type": "boolean",
+      "x-category": "game"
+    },
+    "embed-color": {
+      "description": "The default color that the bot's embeds will use.",
+      "type": "string",
+      "x-category": "global"
+    },
+    "enable-listings": {
+      "type": "boolean",
+      "x-category": "internal-hidden"
+    },
+    "fallback-exceptions": {
+      "description": "Channels where the bot will still send messages while in fallback mode.",
+      "type": "boolean",
+      "x-category": "maintenance"
+    },
+    "fallback-intents": {
+      "x-category": "internal-hidden"
+    },
+    "fallback-mode": {
+      "description": "When enabled, the bot will start in \"fallback mode\". The bot will not send any messages in fallback mode. Message IDs are displayed in the console.",
+      "type": "boolean",
+      "x-category": "maintenance"
+    },
+    "hangman-hints": {
+      "description": "Enables hints in hangman mode.",
+      "type": "boolean",
+      "x-category": "game"
+    },
+    "hangman-mode": {
+      "description": "Enables hangman mode. In this mode, answers are given by typing them out rather than choosing from a list of choices. NOTE: Hangman games can also be started using the /hangman or /setup command.",
+      "type": "boolean",
+      "x-category": "game"
+    },
+    "hide-difficulty": {
+      "description": "When enabled, games will not show their difficulty color. The embed will be blue instead.",
+      "type": "boolean",
+      "x-category": "game"
+    },
+    "listing-tokens": {
+      "description": "Tokens for listing on various Discord bot websites.",
+      "type": "object",
+      "x-category": "internal-hidden"
+    },
+    "login-timeout": {
+      "type": "number",
+      "x-category": "internal-hidden"
+    },
+    "participant-role-name": {
+      "description": "If specified and the role exists, a role with this name will be granted to participating players.",
+      "type": "string",
+      "x-category": "game"
+    },
+    "participant-role-points-required": {
+      "description": "With participant-role-name in use, participants must have at least these many points to be counted.",
+      "type": "number",
+      "x-category": "game"
+    },
+    "prefix": {
+      "description": "If slash commands are disabled: The prefix that users must type before each command. For example, changing this to \"!\" means users will need to type \"!help\" for the help command.",
+      "type": "string",
+      "x-category": "global"
+    },
+    "reveal-answers": {
+      "description": "When disabled, the bot will not display the anwer at the end of the round -- only which players answered correctly.",
+      "type": "boolean",
+      "x-category": "game"
+    },
+    "round-end-warnings-disabled": {
+      "description": "Disables the \"game will end if nobody participates\" warnings.",
+      "type": "boolean",
+      "x-category": "game"
+    },
+    "round-length": {
+      "description": "How long each round lasts in milliseconds. Note that hangman games will add 10 extra seconds to this value.",
+      "type": "number",
+      "x-category": "game"
+    },
+    "round-timeout": {
+      "description": "The amount of time between rounds in milliseconds.",
+      "type": "number",
+      "x-category": "game"
+    },
+    "rounds-end-after": {
+      "description": "How many inactive rounds (where no answers are given) are allowed before a game automatically ends.",
+      "type": "number",
+      "x-category": "game"
+    },
+    "rounds-fixed-number": {
+      "description": "How many rounds the bot will run for when use-fixed-rounds is enabled.",
+      "type": "number",
+      "x-category": "game"
+    },
+    "score-multiplier-max": {
+      "description": "Allows for setting a bonus multiplier for questions. Bonuses are given based on how many other players get the question incorrect. Default is 0, which has no effect. Recommended value is 2 for balance.",
+      "type": "number",
+      "x-category": "game"
+    },
+    "score-value": {
+      "description": "How many points are awarded for each question, based on difficulty.",
+      "type": "number",
+      "x-category": "game"
+    },
+    "shard-count": {
+      "type": "number",
+      "x-category": "internal-hidden"
+    },
+    "stat-file": {
+      "description": "Which file to store statistics in.",
+      "type": "string",
+      "x-category": "global"
+    },
+    "token": {
+      "description": "The token to use to authenticate with Discord.",
+      "type": "string",
+      "x-category": "global"
+    },
+    "unique-multiplier-max": {
+      "deprecated": true,
+      "description": "Same as score-multiplier-max. Deprecated, this is a shim for configurations from 2.x pre-release builds.",
+      "type": "number",
+      "x-category": "shim-game"
+    },
+    "use-fixed-rounds": {
+      "description": "When enabled, games will run for a set number of rounds.",
+      "type": "boolean",
+      "x-category": "game"
+    },
+    "use-slash-commands": {
+      "description": "Whether to use Discord's rich slash commands or text-based commands.",
+      "type": "boolean",
+      "x-category": "global"
+    }
+  }
+}
+
