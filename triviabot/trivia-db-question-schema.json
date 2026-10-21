@@ -28,8 +28,26 @@
             "items": {
               "type": "string"
             }
+          },
+          "answer_extension": {
+            "description": "Additional text that will display at the end of a round with this question.",
+            "type": "string"
+          },
+          "answer_image": {
+            "description": "The URL of an image to display at the end of a round with this question.",
+            "type": "string"
+          },
+          "question_image": {
+            "description": "The URL of an image to display with this question.",
+            "type": "string"
           }
-        }
+        },
+        "required": [
+          "question",
+          "difficulty",
+          "correct_answer",
+          "incorrect_answers"
+        ]
       }
     }
   }
