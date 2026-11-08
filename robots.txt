@@ -1,0 +1,7 @@
+
+User-agent: Bytespider
+Disallow: /
+User-agent: TikTokBot
+Disallow: /
+User-agent: *
+Disallow: 
