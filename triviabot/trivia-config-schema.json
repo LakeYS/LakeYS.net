@@ -50,6 +50,11 @@
       "type": "array",
       "x-category": "game"
     },
+    "commands": {
+      "description": "You can disable any command by changing \"enabled\" from true to false.",
+      "type": "object",
+      "x-category": "global"
+    },
     "database-allow-long-answers": {
       "description": "Allows answers to be longer than 80 characters without an error on startup. Due to Discord's limit of 80 characters, buttons may not display correctly if this is enabled.",
       "type": "boolean",
